@@ -17,13 +17,13 @@ b.onclick = () => {
 ## Open tasks
 ```tasks
 not done
-path includes Balance Robot (Shared)
+
 ```
 
 ## Recently changed
 ```dataview
 TABLE file.folder AS Folder, file.mtime AS Changed
-FROM "01 Projects/Balance Robot (Shared)"
+WHERE file.name != "Home"
 SORT file.mtime DESC
 LIMIT 15
 ```

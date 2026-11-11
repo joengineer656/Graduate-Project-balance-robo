@@ -1,2 +1,3 @@
 notes-sync.conf
-.obsidian/
+.obsidian/workspace*.json
+.trash/
