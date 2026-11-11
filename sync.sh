@@ -36,5 +36,7 @@ find "$VAULT/Team" -maxdepth 1 -type l -delete
 for d in "$PWD"/notes/*/; do
   p=$(basename "$d"); [ "$p" = "$ME" ] || ln -s "${d%/}" "$VAULT/Team/$p"
 done
-[ -f "$VAULT/Team/Project Index.md" ] || cp INDEX.template.md "$VAULT/Team/Project Index.md"
+if [ ! -f "$VAULT/Team/Project Index.md" ]; then  # __REPO__ = where the sync button finds this script
+  shopt -u patsub_replacement 2>/dev/null || true; t=$(<INDEX.template.md); printf '%s\n' "${t//__REPO__/$PWD}" > "$VAULT/Team/Project Index.md"
+fi
 echo "Done: published $(find "$OUT" -name '*.md' | wc -l) notes."

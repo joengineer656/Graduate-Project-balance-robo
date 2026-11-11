@@ -1,5 +1,16 @@
 # Balance Robot – Project Index
-(Needs the Dataview plugin. Covers my notes and my friends' notes.)
+(Needs the Dataview plugin, with JavaScript queries enabled.)
+
+```dataviewjs
+const b = dv.el("button", "🔄 Sync notes");
+b.onclick = () => {
+  b.disabled = true; b.textContent = "Syncing...";
+  require("child_process").execFile("bash", ["__REPO__/sync.sh"], (e, out, err) => {
+    b.disabled = false;
+    b.textContent = e ? "❌ " + (err || e.message).slice(-200) : "✅ " + out.trim();
+  });
+};
+```
 
 ```dataview
 TABLE file.folder AS Where, file.mtime AS Updated

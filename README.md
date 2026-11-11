@@ -11,7 +11,7 @@ Keep it in whatever folder you like in your own vault. Edit only your own notes.
 **Setup (once, each person)**
 1. `git clone` this repo.
 2. `cp notes-sync.conf.example notes-sync.conf`, set `VAULT` and `ME`.
-3. Install the Dataview plugin in Obsidian (for `Team/Project Index`).
+3. Install the Dataview plugin (enable JavaScript queries). `Team/Project Index` has a "Sync notes" button that runs `./sync.sh`.
 
 **Daily:** run `./sync.sh` (or bind it to a hotkey with the Obsidian "Shell commands" plugin).
 It publishes your tagged notes to `notes/<ME>/`, pulls friends' notes, and links them in your vault under `Team/`.
