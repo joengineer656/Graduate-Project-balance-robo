@@ -1,0 +1,24 @@
+This is the requirment for the Graduate Project [Balance Robot]
+
+Diameter around (50cm tall x 30cm)
+Widght 3kg to 4kg
+Speed is not less than 10k/h 
+Can jump to up to 20cm
+climping by single leg
+
+
+---- AI ----
+Add Lidar to make a visual mapping and send the map to us
+Computer visio and ML (we don't know)
+
+
+---- Need Search ----
+Motors + Drivers (Mohammed)
+The Mechanisem of the legs V or Y (Mohammed)
+cost for the 3d robot (Mohammed) 
+What is LQR and MCP and how to programe it (Abdelrahman)
+How to program lidar and how it works  (Abdallah)
+Does the Raspberi Pi 4 good ? (Abdallah)
+How to start with computer vision (Abdallah)
+What is the cost for this project (Abdallah)
+How to balance the robot (Abdallah)

@@ -1,0 +1,33 @@
+This is the requirment for the Prototype Graduate Project [Balance Robot]
+We have 2 months for it the date now is 2026/11/3
+
+The goal of it: is to show it to the compoany will sponsor us 
+and the idea of sponsor is to save our money and make a new connections and traning in it
+
+Diameter around (25cm tall x 16cm)
+Widght 2Kg
+Speed is not less than 10k/h 
+Can jump to up to 10cm
+climping by single leg but in the small differance
+
+Add Ladd camera to make a visual mapping and send the basic map to us 
+Computer visio and ML (we don't know)
+
+---- Componment ----
+Motors: 
+Drivers: 
+MCU: ESP32 
+Computer: raspberry pi 4 with 4Gb (We have it)
+Sensors: Ultrasonic or IR (We have it)
+Camera: we cave one and want to search if we need new one
+Battary:12v or 24v
+body: 3d printing PLA or ABS or use Carbon fiber
+Snappers: Buy
+Weels: 3d printing TPU 
+
+---- Need Search ----
+Motors + Drivers (Mohammed)
+cost for the 3d robot (Mohammed) 
+
+Learn about PID (Abdallah)
+How to program Camera and how it works  (Abdallah)
