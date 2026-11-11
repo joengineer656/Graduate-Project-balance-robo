@@ -1,0 +1,21 @@
+{
+  "commitMessage": "vault backup: {{date}}",
+  "autoCommitMessage": "vault backup: {{date}}",
+  "commitDateFormat": "YYYY-MM-DD HH:mm:ss",
+  "autoSaveInterval": 30,
+  "autoPushInterval": 0,
+  "autoPullInterval": 0,
+  "autoPullOnBoot": false,
+  "disablePush": false,
+  "pullBeforePush": true,
+  "disablePopups": false,
+  "showStatusBar": true,
+  "changedFilesInStatusBar": true,
+  "showBranchStatusBar": true,
+  "differentIntervalCommitAndPush": false,
+  "showedMobileNotice": true,
+  "refreshSourceControl": true,
+  "autoCommitInterval": 30,
+  "autoPushAfterCommit": false,
+  "commitAuthor": "jo_engineer"
+}

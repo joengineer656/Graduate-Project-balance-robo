@@ -1,9 +1,9 @@
 # Balance Robot – Shared
 
 ```dataviewjs
-// The button finds sync.sh through this note's real location, so it works for everyone.
+// The button runs sync.sh from the folder above the vault, so it works for everyone and from any note.
 const path = require("path"), fs = require("fs");
-const repo = path.dirname(path.dirname(fs.realpathSync(app.vault.adapter.basePath + "/" + dv.current().file.path)));
+const repo = path.dirname(fs.realpathSync(app.vault.adapter.basePath)); // repo = folder that holds the vault
 const b = dv.el("button", "🔄 Sync with team");
 b.onclick = () => {
   b.disabled = true; b.textContent = "Syncing...";

@@ -1,1 +1,9 @@
-["dataview","obsidian-tasks-plugin"]
+[
+  "dataview",
+  "templater-obsidian",
+  "obsidian-git",
+  "quickadd",
+  "obsidian-tasks-plugin",
+  "obsidian-excalidraw-plugin",
+  "obsidian-style-settings"
+]

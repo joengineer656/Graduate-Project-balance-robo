@@ -1,0 +1,53 @@
+{
+  "data_version": 2,
+  "command_timeout": 5,
+  "templates_folder": "Templates",
+  "templates_pairs": [],
+  "trigger_on_file_creation_mode": "folder",
+  "auto_jump_to_cursor": false,
+  "jump_to_cursor_after_file_name": false,
+  "shell_path": "",
+  "user_scripts_folder": "",
+  "folder_templates": [
+    {
+      "folder": "10-Projects",
+      "template": "Templates/Project.md"
+    },
+    {
+      "folder": "20-Concepts",
+      "template": "Templates/Concept.md"
+    },
+    {
+      "folder": "20-Concepts/Electronics",
+      "template": "Templates/Concept.md"
+    },
+    {
+      "folder": "20-Concepts/Embedded",
+      "template": "Templates/Concept.md"
+    },
+    {
+      "folder": "20-Concepts/Mechanical",
+      "template": "Templates/Concept.md"
+    },
+    {
+      "folder": "20-Concepts/Robotics",
+      "template": "Templates/Concept.md"
+    },
+    {
+      "folder": "30-Components",
+      "template": "Templates/Component.md"
+    },
+    {
+      "folder": "40-Logs",
+      "template": "Templates/Log.md"
+    }
+  ],
+  "file_templates": [],
+  "syntax_highlighting": true,
+  "syntax_highlighting_mobile": false,
+  "enabled_templates_hotkeys": [],
+  "startup_templates": [],
+  "intellisense_render": "1",
+  "ignore_folders_on_creation": [],
+  "shell_paths": []
+}
