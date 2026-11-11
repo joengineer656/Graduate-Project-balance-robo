@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Balance Robot Team</title>
+<meta name="description" content="Our wheeled-legged balance robot graduate project, and how to set up the shared Obsidian notes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f4ef; --surface:#fff; --text:#1d1d22; --muted:#5d5d68; --line:#e2ded5;
+  --accent:#0f8fb8; --accent-ink:#fff; --code-bg:#1d1d22; --code-text:#e8e6e1; --warn:#b45309;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121317; --surface:#1b1d23; --text:#ecebe8; --muted:#a3a3ad; --line:#2c2f38;
+    --accent:#38bdf8; --accent-ink:#0b1220; --code-bg:#0b0c10; --code-text:#e8e6e1; --warn:#fbbf24;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121317; --surface:#1b1d23; --text:#ecebe8; --muted:#a3a3ad; --line:#2c2f38;
+  --accent:#38bdf8; --accent-ink:#0b1220; --code-bg:#0b0c10; --code-text:#e8e6e1; --warn:#fbbf24;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,sans-serif}
+h1,h2,h3{font-family:"Space Grotesk",sans-serif;line-height:1.15;margin:0 0 .5em}
+h1{font-size:clamp(2.2rem,6vw,3.6rem)}
+h2{font-size:clamp(1.5rem,3.5vw,2rem);margin-top:0}
+h3{font-size:1.15rem}
+a{color:var(--accent)}
+img{max-width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--line)}
+code{font-family:"JetBrains Mono",monospace;font-size:.9em;background:var(--surface);border:1px solid var(--line);padding:.1em .35em;border-radius:5px}
+pre{background:var(--code-bg);color:var(--code-text);padding:14px 16px;border-radius:10px;overflow-x:auto;font:14px/1.5 "JetBrains Mono",monospace}
+pre code{background:none;border:0;padding:0;color:inherit}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:18px;align-items:center;height:52px;overflow-x:auto;white-space:nowrap}
+nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:.92rem}
+nav a:hover{color:var(--text)}
+nav .brand{color:var(--text);font-family:"Space Grotesk";margin-right:auto}
+#theme{background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:4px 9px;cursor:pointer}
+header.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:32px;align-items:center;padding:56px 0 40px}
+.hero p.lead{font-size:1.15rem;color:var(--muted)}
+.tag{display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+figcaption{font-size:.82rem;color:var(--muted);margin-top:6px}
+section{padding:40px 0;border-top:1px solid var(--line)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-top:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.card h3{margin-bottom:.3em}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:18px 0}
+.flow span{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-weight:600}
+.flow b{color:var(--accent)}
+ol.steps{list-style:none;padding:0;margin:0;counter-reset:s}
+ol.steps>li{counter-increment:s;position:relative;padding:0 0 32px 56px}
+ol.steps>li::before{content:counter(s);position:absolute;left:0;top:-2px;width:38px;height:38px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font:700 1.05rem "Space Grotesk"}
+ol.steps>li::after{content:"";position:absolute;left:18px;top:42px;bottom:6px;width:2px;background:var(--line)}
+ol.steps>li:last-child::after{display:none}
+.os{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.os>div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.os h4{margin:0 0 4px;font-size:.9rem}
+.note{border-left:4px solid var(--warn);background:var(--surface);padding:10px 14px;border-radius:0 10px 10px 0;margin:14px 0}
+.shot-small{max-width:380px}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+td,th{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600}
+footer{padding:32px 0 48px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+@media (max-width:720px){
+  header.hero{grid-template-columns:1fr;padding-top:32px}
+  .os{grid-template-columns:1fr}
+  ol.steps>li{padding-left:48px}
+}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="#top">⚖️ Balance Robot</a>
+  <a href="#about">Project</a>
+  <a href="#how">How it works</a>
+  <a href="#setup">Setup</a>
+  <a href="#daily">Daily use</a>
+  <a href="#help">Help</a>
+  <button id="theme" aria-label="Toggle dark mode">◐</button>
+</div></nav>
+
+<main class="wrap" id="top">
+<header class="hero">
+  <div>
+    <span class="tag">BAU · Mechatronics graduate project</span>
+    <h1>The Wheeled-Legged Balance Robot</h1>
+    <p class="lead">Three mechatronics engineers, one robot, and one shared notebook. This page explains the project and gets your laptop synced with the team in about 15 minutes.</p>
+    <p><a href="#setup"><b>Jump to setup →</b></a></p>
+  </div>
+  <figure style="margin:0">
+    <img src="img/cvut-robot.jpg" alt="A blue and black wheeled-legged robot balancing on two wheels on a wooden table">
+    <figcaption>Inspiration: wheeled-legged robot from <a href="https://intranet.fel.cvut.cz/en/aktuality/2021/robot_2_nohy">CTU in Prague (ČVUT)</a></figcaption>
+  </figure>
+</header>
+
+<section id="about">
+  <h2>The project</h2>
+  <p>We are a team of 3 mechatronics engineers from Balqa Applied University (BAU). We want to specialise in robotics, so we compared air drones, underwater drones, robot dogs, robot arms and hexapods, and chose a <b>wheeled-legged balancing robot</b>.</p>
+  <div class="cards">
+    <div class="card"><h3>Less common</h3><p>Drones and robot dogs are popular graduate projects. A wheeled-legged robot stands out.</p></div>
+    <div class="card"><h3>A real challenge</h3><p>A robot arm is not hard enough, and a hexapod has no strong reason to exist. Balancing on legs + wheels is.</p></div>
+    <div class="card"><h3>Affordable</h3><p>It costs less to build than a robot dog.</p></div>
+    <div class="card"><h3>Our next step</h3><p>We hope it supports our applications to fully-funded master's programs like <a href="https://www.mext.go.jp/en/policy/education/highered/title02/detail02/sdetail02/1373897.htm">MEXT</a> and <a href="https://www.daad.de/en/">DAAD</a>.</p></div>
+  </div>
+</section>
+
+<section id="how">
+  <h2>How our notes work</h2>
+  <p>All project knowledge lives in one <b>Obsidian vault</b> (a folder of notes) called <code>Balance Robot Vault</code>. GitHub keeps everyone's copy in sync. Your personal Obsidian notes stay separate and private.</p>
+  <div class="flow">
+    <span>✍️ You write a note</span><b>→</b>
+    <span>🔄 Click “Sync with team”</span><b>→</b>
+    <span>☁️ GitHub</span><b>→</b>
+    <span>👥 Friends click Sync and get it</span>
+  </div>
+  <table>
+    <tr><th>Folder</th><th>What goes in it</th></tr>
+    <tr><td><code>00 Main</code></td><td>Home (sync button, open tasks, recent changes) and the project idea</td></tr>
+    <tr><td><code>01 Notes</code></td><td>Research and concepts (SLAM, control, motors…)</td></tr>
+    <tr><td><code>02 Tasks</code></td><td>To-dos. Write <code>- [ ] task</code> and it shows on Home</td></tr>
+    <tr><td><code>03 Logs</code></td><td>Meeting notes and test logs</td></tr>
+    <tr><td><code>04 Attachments</code></td><td>PDFs, datasheets, files</td></tr>
+    <tr><td><code>05 Archive</code></td><td>Old stuff. Pasted images land in <code>5.1 files</code> automatically</td></tr>
+  </table>
+</section>
+
+<section id="setup">
+  <h2>Setup (once)</h2>
+  <ol class="steps">
+    <li>
+      <h3>Make a GitHub account</h3>
+      <p>Go to <a href="https://github.com/signup">github.com/signup</a> and create a free account.</p>
+      <img src="img/github-signup.png" alt="GitHub header with the Sign up button at the top right">
+      <p><b>Then send your GitHub username to Jo</b>. Jo will invite you to the repo. Open the invitation email (or <a href="https://github.com/notifications">github.com/notifications</a>) and click <b>Accept</b>. Without this, you can read the notes but can't send your changes.</p>
+    </li>
+    <li>
+      <h3>Install Git</h3>
+      <div class="os">
+        <div><h4>🪟 Windows</h4>Download <a href="https://git-scm.com/download/win">Git for Windows</a> and install it with the default options. Keep the install path <code>C:\Program Files\Git</code>, because the sync button looks there.</div>
+        <div><h4>🐧 Linux / 🍎 macOS</h4>Linux: <code>sudo apt install git</code> (or your distro's package manager). macOS: run <code>git --version</code> and accept the install prompt.</div>
+      </div>
+      <p>Then open <b>Git Bash</b> (Windows) or a <b>Terminal</b> and tell Git who you are:</p>
+<pre><code>git config --global user.name "Your Name"
+git config --global user.email "you@example.com"</code></pre>
+    </li>
+    <li>
+      <h3>Install Obsidian</h3>
+      <p>Download it from <a href="https://obsidian.md/download">obsidian.md/download</a>. It's free.</p>
+      <img class="shot-small" src="img/obsidian-download.png" alt="Obsidian download page with the purple download button">
+    </li>
+    <li>
+      <h3>Download the project</h3>
+      <p>In Git Bash / Terminal, go where you want the project (e.g. Documents) and clone it:</p>
+<pre><code>cd ~/Documents
+git clone https://github.com/joengineer656/Graduate-Project-balance-robo.git</code></pre>
+      <p>The first time you sync, a GitHub login window opens. Sign in with your account. This is the repo you'll get:</p>
+      <img src="img/repo.png" alt="The GitHub repository page showing the Balance Robot Vault folder, README and sync.sh">
+    </li>
+    <li>
+      <h3>Open the vault in Obsidian</h3>
+      <p>In Obsidian: click the vault name at the bottom left → <b>Manage vaults…</b> → <b>Open folder as vault</b> → <b>Open</b>, and choose<br><code>Documents/Graduate-Project-balance-robo/Balance Robot Vault</code></p>
+      <img class="shot-small" src="img/obsidian-vaults.png" alt="Obsidian vault manager with the Open folder as vault option">
+      <div class="note">When Obsidian asks about community plugins, click <b>Trust author and enable plugins</b>. The sync button and task list need them (Dataview and Tasks).</div>
+    </li>
+    <li>
+      <h3>Click Sync</h3>
+      <p>Open <code>00 Main/Home</code>. If you see code instead of a button, press <b>Ctrl + E</b> (Reading view). Click <b>🔄 Sync with team</b>: it should turn into ✅.</p>
+      <img src="img/obsidian-home.png" alt="Obsidian showing the Home note with the Sync with team button, open tasks and recently changed notes">
+    </li>
+  </ol>
+</section>
+
+<section id="daily">
+  <h2>Daily use</h2>
+  <div class="cards">
+    <div class="card"><h3>1 · Sync first</h3><p>Click Sync before you start, so you have your friends' latest notes.</p></div>
+    <div class="card"><h3>2 · Write</h3><p>Create and edit notes anywhere in the vault, just like normal Obsidian.</p></div>
+    <div class="card"><h3>3 · Sync again</h3><p>Click Sync when you finish. Your changes go to GitHub for everyone.</p></div>
+  </div>
+  <div class="note">Sync often, and avoid editing the <b>same note at the same time</b> as a friend. That's the only way to get a conflict.</div>
+</section>
+
+<section id="help">
+  <h2>If something goes wrong</h2>
+  <table>
+    <tr><th>You see</th><th>Do this</th></tr>
+    <tr><td>Code instead of a button</td><td>Press Ctrl + E, and check that the plugins are enabled (Settings → Community plugins → turn on Dataview and Tasks).</td></tr>
+    <tr><td>❌ … Authentication / Permission denied</td><td>You haven't accepted the GitHub invite yet, or you need to sign in. Accept the invite, then click Sync again.</td></tr>
+    <tr><td>❌ Conflict: two people edited the same lines</td><td>Message the team. In Git Bash, inside the project folder, run <code>git status</code>. It lists the file; open it, keep the right text, delete the <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> / <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> lines, then run <code>git add -A &amp;&amp; git rebase --continue</code> and click Sync.</td></tr>
+    <tr><td>❌ … bash.exe not found (Windows)</td><td>Git for Windows is not installed in <code>C:\Program Files\Git</code>. Reinstall it with the default path.</td></tr>
+    <tr><td>Nothing works</td><td>In Git Bash / Terminal, in the project folder, run <code>./sync.sh</code> and send the message it prints to the group.</td></tr>
+  </table>
+</section>
+</main>
+
+<footer><div class="wrap">Balance Robot Team · BAU Mechatronics · <a href="https://github.com/joengineer656/Graduate-Project-balance-robo">GitHub repo</a></div></footer>
+
+<script>
+// Remember the chosen theme for this viewer only; page works without storage.
+const root = document.documentElement, btn = document.getElementById("theme");
+try { const t = localStorage.getItem("theme"); if (t) root.dataset.theme = t; } catch (e) {}
+btn.onclick = () => {
+  const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  root.dataset.theme = dark ? "light" : "dark";
+  try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+};
+</script>
+</body>
+</html>

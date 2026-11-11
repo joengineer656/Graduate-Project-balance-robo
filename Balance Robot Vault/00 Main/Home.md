@@ -7,7 +7,9 @@ const repo = path.dirname(fs.realpathSync(app.vault.adapter.basePath)); // repo 
 const b = dv.el("button", "🔄 Sync with team");
 b.onclick = () => {
   b.disabled = true; b.textContent = "Syncing...";
-  require("child_process").execFile("bash", [repo + "/sync.sh"], (e, out, err) => {
+  // Windows: Git for Windows ships bash here; Linux/macOS have it on PATH.
+  const bash = process.platform === "win32" ? "C:\\Program Files\\Git\\bin\\bash.exe" : "bash";
+  require("child_process").execFile(bash, [repo + "/sync.sh"], (e, out, err) => {
     b.disabled = false;
     b.textContent = e ? "❌ " + (out + err).trim().slice(-200) : "✅ " + out.trim();
   });
